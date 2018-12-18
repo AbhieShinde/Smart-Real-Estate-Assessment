@@ -1,0 +1,947 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{times}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{times}
+\usepackage{graphics}
+\usepackage[left=1.50 in,right=1.25 in,top=0.75 in,bottom=0.75 in]{geometry}
+\usepackage{tocloft}
+\usepackage{nomencl}
+\usepackage{graphicx}
+
+\renewcommand{\headrulewidth}{0.4 pt}
+\renewcommand{\footrulewidth}{0.4 pt}
+
+
+
+\begin{document}
+
+
+%---------------------------------------Cover Page-------------------------------------------------------
+\newpage
+\pagestyle{empty}
+ %\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\thisfancyput(-0.0 in,-9.7 in){%
+	%\thisfancypage{%
+%\setlength{\fboxrule}{1pt}\doublebox}{} 
+\setlength{\unitlength}{1 in}\framebox(6.7,10.2)}
+\begin{center}
+      \vspace{2 in}
+      \textbf{A SEMINAR REPORT}
+      \vspace{0.2 in}\\
+       ON
+			\end{center}
+\vspace{0.1 in}
+	\begin{center}
+		\textbf{\large \lq \lq Data Centers and Virtualization  \rq \rq}
+	\end{center}
+     \vspace{0.3 in}
+	
+		\begin{center}
+	    SUBMITTED TO THE SAVITRIBAI PHULE PUNE UNIVERSITY ,PUNE \\
+	    IN PARTIAL FULFILLMENT OF THE REQUIREMENTS\\
+	    FOR THE AWARD OF THE DEGREE 
+	\end{center}
+	\vspace{0.2 in}
+	
+	\begin{center}
+	   \textbf{THIRD YEAR OF ENGINEERING \\
+	   (Computer Engineering)}
+	\end{center}
+	\vspace{0.1 in}
+	
+	\begin{center}
+	   \textbf{BY}
+	\end{center}
+	\vspace{0.1 in}
+	
+	\begin{center}
+	   Mr. SHINDE ABHISHEK S.  \\ Exam Seat No: T150194252
+	\end{center}
+	\vspace{0.1 in}
+	
+	\begin{center}
+	  \textbf{UNDER THE GUIDANCE OF}\\ 
+	  Prof. KHALATE Y. R.
+	\end{center}
+		\begin{center}
+	  \begin{figure}[h]
+			\centering
+			\includegraphics[width=3 cm]{svpm.png}
+		\end{figure}
+	\end{center}
+		\begin{center}
+	  \textbf{DEPARTMENT OF COMPUTER ENGINEERING}\\
+	  SVPM'S COLLEGE OF ENGINEERING\\
+	  MALEGAON(Bk) \\
+	   2017-18
+	  
+	\end{center}
+
+%---------------------------------------Cover Page END--------------------------------------------------
+
+
+
+%------------------CERTIFICATE--------------------------------------------------------------------------
+\newpage
+\pagestyle{empty}
+ %\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\thisfancyput(-0.0in,-9.7in){%
+	%\thisfancypage{%
+%\setlength{\fboxrule}{1pt}\doublebox}{} 
+\setlength{\unitlength}{1in}\framebox(6.7,10.2)}
+\begin{center}
+{\bf DEPARTMENT OF COMPUTER ENGINEERING \\
+SVPM'S COLLEGE OF ENGINEERING }\\
+{\bf SEMESTER II 2017-18}\\
+\vspace{0.2in}
+\includegraphics[width=2.5cm]{svpm.png}
+\end{center}
+\vspace{0.1in}
+\begin{center}
+\textbf{\underline{C E R T I F I C A T E}}\\
+\vspace{0.1in}
+\end{center}
+		\noindent
+  				\setlength{\baselineskip}{1.5\baselineskip}
+	\begin{center}
+This is to certify that the seminar work entitled\\
+		\textbf{\large "Data Centers and Virtualization" }\\
+
+Submitted by \\
+ Mr. SHINDE ABHISHEK S.   \\ Exam Seat No: T150194252
+	\end{center}
+
+\begin{quote}
+is a bonafide work carried out under the supervision of Prof. Khalate Y. R. and it is submitted towards the partial fulfilment of the requirement of Savitribai Phule Pune University, Pune for the award of the degree of Third year of Engineering(Computer Engineering).   				  
+\end{quote}
+		\noindent 
+		\vspace{0.3 in}
+
+		
+		\hspace{0.2in}Prof. Khalate Y. R.      \hspace{1.2in} 			Prof. H. R. KUMBHAR\\
+	\centerline {\hspace{0.2in}(Guide)        \hspace{1.2in}  (HOD Computer Dept.)}\\
+			   			   	\vspace{0.3 in}	
+			   
+ \begin{center}
+   Dr. D.M. YADAV\\
+   (Principal)
+\end{center}
+\vspace{0.2 in}
+Place: College of Engineering, Malegaon(Bk.) \\
+\hspace{0.1in} Date: 05/04/2018
+%------------------ end-----------------------------------------------------------------------------------
+
+
+
+%-----------------------------------Acknowledgement ------------------------------------------------
+	\newpage					%start a new page
+		\pagestyle{empty}           %dont display header footer and page nos
+		\pagenumbering{gobble}
+		\begin{center}				%centre align the text
+				\section*{Acknowledgement}
+				\vspace{.15 in}       %leave space of 0.5 inches vertically	
+		\end{center}
+
+\begin{normalsize}
+	{
+
+	{\setlength{\baselineskip}{1.5\baselineskip}
+	
+	\subparagraph{}
+	I am highly indebted to \textbf{Prof. Khalate Y. R.} for their guidance and constant supervision as well as for providing necessary information regarding the project and also for their support in completing the seminar.
+	
+\subparagraph{}
+I would like to express my special gratitude  towards \textbf{Prof.Nimbalkar S.S.} for their kind co-operation and encouragement which help me in completion of this seminar.
+
+\subparagraph{}
+I have taken efforts in this seminar. However, it would not have been possible without the kind support and help of \textbf{Prof. KUMBHAR H. R. (H.O.D Computer Department)} I would like to extend my sincere thanks to all of them.
+
+\subparagraph{}
+I would like to express my gratitude and thanks to \textbf{Principal Dr. YADAV D. M.} to provide such a good environment for studies and other curricular activities and last but not least thank you for providing us such awesome LAB Facilities and services.
+
+\subparagraph{}
+I am also thanks and appreciations to my colleagues who helped and cooperated with me in conducting the seminar by their active participation.
+		
+	
+	 \vspace{30mm}
+	 
+	\begin{flushright}
+	Shinde Abhishek S.
+	\end{flushright}
+	}
+	}
+
+\end{normalsize}
+
+
+%-----------------------------------Acknowledgement ends-------------------------------------------------
+
+
+
+
+
+\newpage
+\pagestyle{fancy}
+						
+							
+				\begin{normalsize}
+				\pagestyle{empty}
+                   	\pagenumbering{gobble}				
+					\tableofcontents
+			      %\addcontentsline{toc}{section}{Table of Contents}
+
+
+			         
+			         \newpage
+			         \pagestyle{empty}
+                     \pagenumbering{roman}
+			         {\setlength{\baselineskip}{1.5\baselineskip}
+			         \listoffigures
+			         \addcontentsline{toc}{section}{List of Figures}
+			         }
+
+
+			         
+			          \newpage
+			          \pagestyle{empty}
+			         {\setlength{\baselineskip}{1.5\baselineskip}
+			         \listoftables
+			         \addcontentsline{toc}{section}{List of Tables}
+			         }
+			         
+			         
+			         
+			     \newpage
+			         {\setlength{\baselineskip}{1.5\baselineskip}
+			         \addcontentsline{toc}{section}{Abbreviations}
+			         } 
+			   
+ \end{normalsize}
+
+
+
+%--------------------Add Abbreviations-----------------------------------------------------------------
+
+
+\newpage
+
+\pagestyle{plain}
+\begin{normalsize}
+		\begin{center}				%centre align the text
+			
+				\section*{Abbreviations}
+				\vspace{.15 in}       %leave space of 0.5 inches vertically
+			
+		\end{center}
+
+\begin{tabular}{lll}
+\vspace{0.1 in}
+	DC	&	:	&	Data Center	\\
+\vspace{0.1 in}
+	ROI &: &Return on Investment \\
+\vspace{0.1 in}
+	HVAC &:& Heating, Ventilating and Air-Conditioning	\\
+\vspace{0.1 in}
+	IPC &:& Inter-Process Communication	\\
+\vspace{0.1 in}
+	VLAN &:& Virtual Local Area Network	\\
+\vspace{0.1 in}
+	OSPF &: &Obtain Shortest Path First \\
+\vspace{0.1 in}
+	1RU &:& One Rack Unit \\
+\vspace{0.1 in}
+CAT 5e and CAT 6   & : & Category 5 and Category 6 cables \\
+\vspace{0.1 in}
+VESDA & : & Very Early Smoke Detection Apparatus \\
+\vspace{0.1 in}
+CRAH & : & Computer Room Air Handler \\
+\vspace{0.1 in}
+CRAC & : & Computer Room Air Conditioning \\
+\vspace{0.1 in}
+AHU	& : & Air Handling Unit \\
+\vspace{0.1 in}
+MBSA & :& Microsoft Baseline Security Analyzer\\
+\vspace{0.1 in}
+MAP & : & Microsoft Assessment and Planning toolkit\\
+\vspace{0.1 in}
+VGC & : & VMware Guided Consolidation\\
+\vspace{0.1 in}
+VCP & : & VMware Capacity Planner\\
+\vspace{0.1 in}
+SLA & : & Service Level Agreements\\
+
+
+\end{tabular}
+\end{normalsize}
+
+
+%---------------------------------END TOC---------------------------------------------------------------
+
+
+
+%---------------------------Chapters Start-------------------------------------------------------------
+
+\newpage
+
+
+
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
+     				% command to change footer ruler width
+\fancyfoot[RO]{\textit{SVPM's COE,Malegaon(Bk)}}								 %Right over part of footer
+\fancyfoot[LO]{\textit{Dept. of Comp Engg.}}	
+
+							% Left over part of footer
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+
+\chapter{INTRODUCTION}
+The Data Center is home to the critical computing resources like computational power, storage, and applications necessary to support an Enterprise business in controlled environments and under centralized management, which enable enterprises to operate around the clock or according to their business needs. DCs are the backbone of the variety internet services such as web-hosting, e-commerce, and social networking. They provide the capabilities of centralized repository for storage, management and networking of data i.e. DC infrastructure is central to the IT architecture, from which all the data is sourced or passes through.
+DC provide the capabilities of centralized repository for storage, management, networking of data. Designing and maintaining a DC network requires skills and knowledge that range from routing and switching to load balancing and security with essential knowledge of servers and applications. Here in this Seminar we will see basic fundamental information such as protocols used by switches and routers as well as in application environment. We’ll also see the network technology used to build DC infrastructure and secure and manage the application environment.\\
+Design : The basic design criteria of DC is,\\
+\begin{tabular}{lll}
+\vspace{0.1 in}
+ Availability & \\
+\vspace{0.1 in}
+	Scalability & \\
+\vspace{0.1 in}
+Security & \\
+\vspace{0.1 in}
+Performance & \\
+\vspace{0.1 in}
+Manageability & \\
+\end{tabular}
+\\Facilities : Because DC holds critical computing resources, enterprise must make special arrangements in order to 24/7 operation of all equipments of it. For this we need to address the following areas:\\
+\begin{tabular}{lll}
+\vspace{0.1 in}
+Power capacity & \\
+\vspace{0.1 in}
+Cooling capacity & \\
+\vspace{0.1 in}
+Cabling & \\
+\vspace{0.1 in}
+ Temperature and Humidity control& \\
+\vspace{0.1 in}
+ Fire and Smoke systems & \\
+ \vspace{0.1 in}
+ Physical security & \\
+ \vspace{0.1 in}
+ Rack space and raised floors & \\
+\end{tabular}
+
+
+\section{Motivation }
+As we know DC is the key element of any enterprise business which provides services over the web. Then actual data storage and management is done here in DC at large scale. If we see the pictures of data centers, their infrastructure, server rooms with server racks containing lots of servers working together; it is pretty interesting to learn. How the DC actually work? How do they manage such a huge amount of data? How do they interact with us? How can we improve their performance? What are the basic techniques used in DC? Such some lots of questions in my mind about DCs. So I start getting information about DCs and their working. In between this search I come to know about the virtualization technique in DC. Making the DC energy-efficient and cost-efficient can be done with Virtualization technique. So, I also start getting information about Virtualization too. Here in this seminar I am going to discuss about DCs as well as how we can apply virtualization technique to implement green data center.
+
+\section{Objectives }
+\begin{tabular}{lll}
+\vspace{0.1 in}
+1.	What is Data Center & \\
+\vspace{0.1 in}
+2.	DC infrastructure design & \\
+\vspace{0.1 in}
+3.	Architecture of DCs & \\
+\vspace{0.1 in}
+4.	Green Data Center concept & \\
+\vspace{0.1 in}
+5.	Virtualization in DCs & \\
+\end{tabular}
+
+
+
+ \section{Outcomes }
+Implementation model for Green DCs using Virtualization, which are\\
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+1.	Cost-effective &\\
+\vspace*{0.1 in}
+2.	Energy-efficient &\\
+\end{tabular}
+\\Data centers, With the use of appropriate VM placement and scheduling algorithms. 
+
+\section{Advantages }
+1.	With the use of  virtualization, we can reduce the number of servers in DC.\\
+2.	Due to reduction in numbers of servers, the energy consumption is get reduced.\\
+3.	Overall cost of DC is get reduced.\\
+4.	Space and management complexity also get reduced by implementing Virtualization.\\
+
+
+
+	
+
+
+%----------------------------------------------------chapter 1 end ------------------------------------
+
+
+
+
+
+\chapter{LITERATURE REVIEW}
+
+%\section{Review of Literature}
+\subparagraph{}
+As rapid development in IT sector nowadays, different services like IoT platforms, Smart devices, Social media, Mobile applications etc produces huge amount of data which is to be stored in Database located somewhere in the DC. Due to this, there is a need of rapid increase in the computational power, Storage capacity and so size of DCs, therefore there is a continuous increase in the demand for energy. DCs have grown themselves significantly by continuous addition of thousands of servers. These servers are consuming much more power, and have become larger, denser, hotter, and significantly costlier to operate.[1]
+\subparagraph{} 
+The energy use and environmental impact of DCs has recently become a major issue. It causes global warming due to emission of Green House gases like Carbon Dioxide(CO2), Methane(CH4), Nitrous Oxide(N2O), Sulphur Dioxide(SO2), Nitrogen Oxide(NO2) etc as well as it causes IT inefficiencies. At the same time the commodity price of energy and equipments has risen faster than many expectations. This rapid rise in energy cost has impacted the business models of many enterprises.[3]
+\subparagraph{}
+With the increase in infrastructure and IT equipment, there is a considerable increase in the energy consumption by the DCs, and this energy consumption is doubling after every five years. Today’s DCs are big consumer of energy and are filled with high density, power hungry equipment. If DC managers remain unaware of these energy problems then the energy costs will be doubled as previous decade, this is happening due to raise in amount of data and services are increasing day by day. There is a continuous increase in IT budget from 10  to over 50 percent in the next few years. Energy increase will be doubled in next two years in DCs. If these costs continue to double every five years, then DC energy costs will increase to 1600 percent between 2005 and 2025. Currently USA and Europe have largest DC power usage but Asia pacific region is also rapidly increasing the energy consumption.[4]
+
+
+
+
+
+
+
+
+%----------------------------------------------------chapter 2 end ----------------------------------
+\chapter{SYSTEM OVERVIEW}
+
+\section{System Description}
+\subsection{DC Standards}
+This technique of DCs classification is nothing but a standardized methodology used to define uptime of data center. This is useful for measuring:\\
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+a) Data center performance &\\
+\vspace*{0.1 in}
+b) Investment &\\
+\vspace*{0.1 in}
+c) ROI &\\
+\end{tabular}
+
+There are four tiers/level of DC Standards :\\
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+•	Tier level 1 &\\
+\vspace*{0.1 in}
+•	Tier level 2 &\\
+\vspace*{0.1 in}
+•	Tier level 3 &\\
+\vspace*{0.1 in}
+•	Tier level 4 &\\
+\end{tabular}
+
+\subsubsection{Tier level 1 :} 
+Composed of a single path for power and cooling distribution, without redundant components.
+Basic site infrastructure guaranteeing 99.671 percent availability.
+
+\subsubsection{Tier level 2 :}
+Fulfils all Tier 1 requirements.
+Composed of a single path for power and cooling distribution, with redundant components.
+Basic site infrastructure guaranteeing 99.741 percent availability.
+
+\subsubsection{Tier level 3 :}
+Fulfils all Tier 1 and Tier 2 requirements.
+Composed of multiple independent active power and cooling distribution paths, but only one path is active, has redundant components, and is concurrently maintainable.
+All IT equipment must be dual-powered and fully compatible with the topology of a site's architecture.
+Basic site infrastructure guaranteeing 99.982 percent availability.
+
+\subsubsection{Tier level 4 :}
+Fulfils all Tier 1, Tier 2 and Tier 3 requirements.
+Composed of multiple independent active power and cooling distribution paths, has redundant components.
+All cooling equipment is independently dual-powered, including chillers and HVAC systems
+Fault-tolerant site infrastructure with electrical power storage and distribution facilities guaranteeing 99.995 percent availability.
+
+\subsection{DC multi-tier Design Model} 
+The multi-tier data center model is dominated by HTTP-based applications in a multi-tier approach. The multi-tier approach includes web, application, and database tiers of servers. Today, most web-based applications are built as multi-tier applications. The multi-tier model uses software that runs as separate processes on the same machine using IPC, or on different machines with communications over the network. Typically, the following three tiers are used :\\
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+• Web-server &\\
+\vspace*{0.1 in}
+• Application  &\\
+\vspace*{0.1 in}
+• Database &\\
+\end{tabular} 
+
+
+Here, Web-server serves web pages (Static/Dynamic content), Application server implements business logic and manipulates data, Database server accesses data store with high transaction rate and bandwidth. 
+Multi-tier server farms built with processes running on separate machines can provide improved resiliency and security.
+To improve system performance, we can use segregation. Physical segregation improves performance because each tier of servers is connected to dedicated Hardware. The advantage of using logical segregation with VLANs is the reduced complexity of the Server farm. The choice of physical segregation or logical segregation depends on your specific network performance requirements and traffic patterns.
+
+\newpage
+\section{System Architecture}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14cm]{zu.jpg}
+\caption{DC Infrastructure}
+\end{center}
+\end{figure}
+
+The DC design is based on proven layered approach, which has been tested and improved over past several years in some of the largest DC implementations in the world. The layered approach is basic foundation of the DC system architecture that seeks to improve scalability,  performance, flexibility, resiliency and maintenance. Figure shows basic layered system design.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14cm]{dct.png}
+\caption{DC topology}
+\end{center}
+\end{figure}
+
+\subparagraph{Core layer :}	 This layer provides high-speed packet switching platform for all connections going in and out of DC. The core layer provides connectivity to multiple aggregation modules. It runs interior routing protocols such as OSPF or EIGRP and load balances the traffic between campus core and aggregation layers using Cisco Express Forwarding based hashing algorithms.
+\subparagraph{Aggregation layer :} These modules provide important functions such as service module integration, spanning tree processing and default gateway redundancy. Server-to-server multi-tier traffic flows through this layer and can integrate additional services such as Firewall, SSL offloading, network analysis, server load balancing and more to optimize and secure the DC application.
+\subparagraph{Access layer :} In this layer the servers are physically attached to the network. The server components consist of 1RU servers, blade servers with integral switches, blade servers with pass through cabling, cluster switches and mainframes with OSA adapters. The access layer infrastructure consists of modular switches, fixed configuration 1U or 2RU switches and integral blade server switches. 
+
+\subsection{Components of DC :}
+If we see the basic design of DCs, there are multiple servers are working together with use of networking devices such as Switches and Routers. These servers are mounted in sever racks in vertical manner and cabling is done along with it.\\
+
+\subsubsection{Servers :} Servers are the powerful processing units and basic building block of DC, where data storage, manipulations and management is done.\\ 
+A rack unit or one U is the standard size for servers and other network equipments that is installed in 19-inch server racks of DCs. These racks are of 19-inch-wide(482.6 mm) and have variable height which is expressed in such rack units. 
+1U or 1RU is 1.75 inches or 44.45 mm.\\
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=10cm]{racks.jpg}
+\caption{DC Server racks}
+\end{center}
+\end{figure}
+
+\subsubsection{Server rack :} The overall height of the server rack varies based on the manufacturer, it can be between 40U and 46U.\\ If you are having rack of 40U, that means you may install 40 servers or network equipments of 1U.
+
+\subsubsection{Cabling :} 
+\vspace*{0.1 in}
+•	All the network cabling are done with Fiber Optics cables and Ethernet \\
+\vspace*{0.1 in}
+Most of the servers and storage devices are connected  with Ethernet cables, specially CAT 5e and CAT 6 \\
+\vspace*{0.1 in}
+•	The main standard for DC cabling is ANSI/TIA-568 \\
+
+  
+\subsubsection{Fire system :}
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+•	The most effective method of fire protection is fire prevention. &\\
+\vspace*{0.1 in}
+•	The NFPA-75 is standard for protection of computer or data processing equipments. &\\
+\vspace*{0.1 in}
+•	Fire detection devices in DCs are &\\
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+1.	Smoke detector &\\
+\vspace*{0.1 in}
+2.	Heat detector &\\
+\vspace*{0.1 in}
+3.	Flame detector &\\
+\end{tabular}\\
+\vspace*{0.1 in}
+•	In recent days fire detection can be done through VESDA by sampling technique. &\\
+\vspace*{0.1 in}
+•	Fire extinguishers and Water sprinkler systems are must be used. &\\
+\end{tabular} 
+
+\subsubsection{Security system :}
+To protect the DC from malicious act security systems are very important. The main security systems are :\\
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+•	Access control &\\
+\vspace*{0.1 in}
+•	CCTV &\\
+\vspace*{0.1 in}
+•	Intercom &\\
+\vspace*{0.1 in}
+•	Perimeter protection &\\
+\end{tabular}
+
+
+\subsubsection{Cooling system :}
+Servers of DC are continuously running 24/7 to provide services to us worldwide. Because of that they produces heat very much. That's why server rooms are must be kept cool while working of DC. Now a days precision air-conditioning equipment is used for precise control of both temperature and humidity.\\ 
+Main cooling equipments are\\
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+•	Chiller ,
+\vspace*{0.1 in}
+•	CRAH ,
+\vspace*{0.1 in}
+•	CRAC ,
+\vspace*{0.1 in}
+•	AHU ,
+\end{tabular}
+\subsubsection{Backup power :}
+Sensitive components within todays servers require power that is free of interruption or distortion. That’s why all components of DC are must be in running state all time. For this situation we need additional backup option for power to run all servers. For this we can use Stand-by generator and backup battery units. A standby generator system is a combination of an electrical generator and a mechanical engine mounted together to form a single piece of equipment. 
+
+
+
+%\begin{tabular}{lll}
+%\vspace*{0.1 in}
+%\vspace*{0.1 in}
+%\vspace*{0.1 in}
+%\end{tabular}
+
+
+%----------------------------------------------------chapter 3 end -----------------------------------
+\chapter{Virtualization}
+\section{What is Virtualization?}
+The term virtualization refers to abstraction of system resources to allows multiple operating systems run on one system at a time.\\
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=15cm]{virtualization.png}
+\caption{DC Virtualization}
+\end{center}
+\end{figure}\\
+In DCs, virtualization meaning is as similar as mentioned above, here Multiple virtual machines run on one physical machine i.e. Server. Applications run unmodified as on real machine. By use of this technique we can make DC green i.e. Energy-efficient and Cost-efficient. The electric bill for the data center was also reduced using this technique. If physical servers could be consolidated at the rate of 4 virtual machines to 1 physical machine (a 4:1 consolidation ratio ), then the data center could power off 3 out of 4 physical servers - a huge reduction in the overall power consumption. Also, if only 1 out of 4 physical servers was running, the cooling and battery backup systems didn't need to be nearly as robust. The physical footprint of the data center was reduced. That reduction was especially economically important in co-location scenarios where square footage is a premium. Here,  overall utilization of compute resources also can be increased. Rather than having 10 physical servers running at 10% utilization, there were now two servers running at 50% or higher utilization.
+The impact of virtualization changed networking as well, all the way down to the physical connections. Where there may have once been two data cables for every server in the environment, in a post-virtualization data center there are perhaps two data cables per hyper-visor with many virtual machines utilizing those physical links. See Figure for an example of this consolidation.\\
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14cm]{pvpv.png}
+\caption{DC Pre- vs. Post-virtualization consolidation}
+\end{center}
+\end{figure}\\ 
+Hyper-visor and virtual machine performance increased, and with it the demands on related infrastructure components. Driving virtual machine density necessitated higher bandwidth networking to allow for the high quantity of traffic sharing a single pipe. It also required higher disk performance and lower latency due to the virtual machines sharing the same storage path. In a totally physical data center, 10 physical machines all performing I/O operations at 5 milliseconds of latency would be fine. However, when virtualized, the tenth machine in line might see a 50 millisecond I/O latency, which is likely unacceptable. To make matters worse, operating systems weren’t written with virtualization or shared storage in mind. They were written to arrange data on a physical disk with the understanding that it could afford to be inefficient at times, since the only machine utilizing the disk it ran on was itself.
+\subparagraph{Consolidation Ratios:}
+The consolidation ratio is a way of referring to the effectiveness of some sort of reduction technique. One example of a consolidation ratio would be the amount physical servers that can be consolidated to virtual machines on one physical host. Another example is the amount of copies of duplicate data that can be represented by only one copy of the data. In both cases, the ratio will be expressed as [consolidated amount]:1. For example, 4:1 vCPUs to physical cores would indicate in a P2V project that for every 1 physical CPU core available, 4 vCPUs are allocated and performing to expectations.
+
+\newpage
+\section{Why virtualization?}
+
+\vspace*{0.1 in}
+1.	Lower number of physical servers – you can reduce hardware maintenance cost due to lower number of physical servers. 
+\vspace*{0.1 in}\\
+2.	By implementing server consolidation strategy, you can increase space utilization efficiency in your DC.
+\vspace*{0.1 in}\\
+3.	By having each application in its own virtual sever you can prevent one application affecting other applications when upgrades or changes are made. 
+\vspace*{0.1 in}\\
+4.	You can develop a standard virtual server build that can be easily duplicated which will reduce server deployment time.
+\vspace*{0.1 in}\\
+5.	You can deploy multiple OS technologies on a single hardware platform.\\
+
+\begin{table}
+\begin{tabular}{l l l}
+
+\textbf{Components} & \textbf{Without Virtualization} & \textbf{With Virtualization}\\
+\\
+Number of Physical servers required & 62 & 6 \\
+Total Hardware cost & 434,000 & 38,755 \\
+Hardware Maintenance & 45,000 & 15,454 \\
+VMware software & 0 & 21,000 \\
+VMware software support & 0 & 5,250 \\
+VMware training and services & 0 & 19,500 \\
+Server Deployment cost & 59,520 & 7,440 \\
+Server Deployment time(Hours) & 1488 & 186 \\
+\textbf{Total Cost} & \textbf{538,520} & \textbf{107,399} \\
+Six months ROI &  & 289 percent \\
+Recovery time(Hours) & 12 & 1 \\
+Server Consolidation ratio & 10 & 1 \\
+\textbf{Average CPU Utilization (Percent)} & \textbf{5} & \textbf{80} 
+
+\end{tabular}
+\caption{Data Ceneter Examples}
+\end{table}
+
+\newpage
+\section{Benefits of Virtualization}
+Virtualization promises to radically transform computing for the better utilization of resources available in the data center reducing overall costs and increasing agility. It reduces operational complexity, maintains flexibility in selecting software and hardware platforms and product vendors. It also increases agility in managing heterogeneous virtual environments. Some of the benefits of virtualization are\\
+
+\subsection{Server and Application Consolidation} 
+Virtual machines can be used to consolidate the workloads of under-utilized servers on to fewer machines, perhaps a single machine. The benefits include savings on hardware and software, environmental costs, management, and administration of the server infrastructure. The execution of legacy applications is well served by virtual machines. A legacy application may not run on newer hardware or operating systems. Even if it does, it may under-utilize the server, hence virtualization consolidates several such applications, which are usually not written to co-exist within a single execution environment. Virtual machines provide secure, isolated sandboxes for running entrusted applications. 
+Examples include address obfuscation. Hence Virtualization is an important concept in building secure computing platforms. 
+
+\subsection{Multiple Execution Environments}
+ Virtual machines can be used to create operating systems or execution environments that guarantee resource management by using resource management schedulers with resource limitations. Virtual machines provide the illusion of hardware configuration such as SCSI devices. It can also be used to simulate networks of independent computers. It enables to run multiple operating systems simultaneously having different versions, or even different vendors.
+
+\subsection{Debugging and Performance}
+ Virtual machines allow powerful debugging and performance monitoring tools that can be installed in the virtual machine monitor to debug operating systems without losing productivity. Virtual machines provide fault and error containment by isolating applications and services they run. They also provide behavior of these different faults. Virtual machines aid application and system mobility by making software’s easier to migrate, thus large application suites can be treated as appliances by "packaging" and running each in a virtual machine. Virtual machines are great tools for research and academic experiments. They provide isolation, and encapsulate the entire state of a running system. Since we can save the state, examine, modify and reload it. Hence it provides an abstraction of the workload being run. 
+
+\subsection{Resource Sharing} 
+Virtualization enables the existing operating systems to run on shared memory multiprocessors. Virtual machines can be used to create arbitrary test scenarios, and thus lead to very imaginative and effective quality assurance. Virtualization can also be used to retrofit new features in existing operating systems without "too much" work. Virtualization makes tasks such as system migration, backup, and recovery easier and more manageable. Virtualization provides an effective means of binary compatibility across all hardware and software platforms to enhance manageability among different components of virtualization process.
+
+\newpage
+\section{Implementing Virtualization}
+Here we can define a layered model consisting of five layers and further each layer comprising of more detailed processes for Implementing Virtualization in DCs. These components provide a detailed treatment of emerging challenges faced by data centers managers to implement and manage virtualization properly in their data centers to achieve desired objectives. The proposed model defines that, the process of virtualization should be structured and designed in such a way that it must fulfil the necessary requirements and should be within the scope and infrastructure domain already installed in the data center. It is therefore much more than simply loading a virtualization technology on different servers and transforming one or two workloads into virtual machines. Rather it is a complex and rigorous process that need to be implemented and monitored properly. This model defines five key steps need to be followed at different stages in a structural way to achieve the efficiency required in the DC. The components of proposed model are listed below:\\
+\hspace*{0.1 in}
+\begin{tabular}{lll}
+\vspace*{0.1 in}
+1. Inventory Process &\\
+\vspace*{0.1 in}
+2. Type and Nature of Virtualization &\\
+\vspace*{0.1 in}
+3. Hardware Maximization &\\
+\vspace*{0.1 in}
+4. Architecture &\\
+\vspace*{0.1 in}
+5. Manage Virtualization &\\
+\end{tabular}\\
+
+ \begin{figure}[]
+\begin{center}
+\includegraphics[width=10cm]{pov.png}
+\caption{Virtualization Implemention process model for DC}
+\end{center}
+\end{figure}
+
+\subsection{Inventory Process :}
+The process of virtualization starts by creating an inventory of all hardware and software resources including servers and their associated resources and workloads they require for processing, storage components, networking components etc. The inventory process includes both utilized and idle servers. This process also includes information related to: \\
+ • Processor \\
+ • Types of processors (socket, Core, Threads, Cache)\\
+ • Memory size and speed\\
+ • Network type (Number of ports, speed of each port)\\
+ • Local storage (number of disk drives, capacity, RAID)\\
+ • Operating system and their patch levels (service levels)\\
+ • Applications installed\\
+ • Running services\\
+ • Running Application\\
+ • Storage Devices etc. \\
+ The inventory process also discovers, identifies and analyses an organizations network before it is being virtualized. It consists of following phases: \\
+
+a)	Discovery: It is very important for an organization to know in advance the total content of its infrastructure before implementing virtualization. This is the most important step in any virtualization project. There are many tools available from different vendors for performing initial analysis of an organization.\\ 
+ MBSA tool provides different information like IP addressing, Operating System, installed applications and most importantly vulnerabilities of every scanned system. After analysing, all generated values are linked to MS Visio, which generates a complete inventory diagram of all components and also provides details about each component being analysed.\\
+ MAP is another tool for the assessment of network resources. It works with windows management instrumentation (WMI), the remote registry service or with simple network management protocol to identify systems on network. \\
+VMware, the founder of X-86 virtualization, also offers different tools for the assessment of servers that could be transformed into virtual machines. VGC a powerful tool assesses network with fewer than 100 physical servers. Since VGC is an agent less tool it doesn’t add any overhead over production server’s workload.\\
+
+ b) Categorize Server Resources: After creating server inventory information, the next step is to categorize the servers and their associated resources and workloads into resource pools. This process is performed to avoid any technical political, security, privacy and regulatory concern between servers, which prevent them from sharing resources. Once analysis is performed, we can categorize each server roles into groups. Server roles are categorized into following service types:\\
+ • Network infrastructure servers \\\
+• Identity Management servers \\
+• Terminal servers\\
+ • File and print servers\\
+ • Application servers\\
+ • Dedicated web servers \\
+• Collaboration servers\\
+ • Web servers\\
+ • Database servers\\
+
+Categorizing Application Resources: After categorizing servers into different resource pools, applications will also be categorized as: \\
+ • Commercial versus in-house\\
+ • Custom applications\\
+ • Legacy versus updated applications \\
+• Infrastructure applications\\
+ • Support to business applications \\
+• Line of business applications\\
+ • Mission critical applications \\
+ 
+d) Allocation of Resources: After creating the workloads, the next process is to allocate computing resources required by these different workloads and then arranging them in normalized form, but for normalization the processor utilization should be at least 50 percent. It is very important to normalize workloads so as to achieve maximum efficiency in terms of energy, cost and utilization. The formula proposed in this paper for normalization is to multiply utilization ratio of each server by total processor capacity that is\\
+maximum processor efficiency * number of processors * number of cores\\
+
+
+
+
+\subsection{Type and Nature of Virtualization} 
+After analysing and categorizing servers and other resources, the second step defines virtualization in more detail like its advantages, its types, layers and most importantly vendor identification and selection whose product most suits and fulfils all criteria for data gathered in first step. VCP tool can be used when network size extends over 100 physical servers. It generates reports on server processor utilization including CPU, Memory, and network and disk utilization on server by server basis and finally identifies potential virtualization candidates. Other tools like CIRBA’s Power Recon and Plate Spin’s are also very useful tools which analyse technical and nontechnical factors in data centers and generate reports for the consolidation of servers. It should be noted that all analysis should be done on time for a period of at least one month; this will generate high and low utilization ratios for each server.
+
+
+
+\subsection{Hardware Maximization}
+This is the most important step of virtualization process. Since servers are now going to run multiple virtual workloads, it is important to consider hardware issues because already available hardware is not enough and suitable for providing high availability of virtual workloads. A change is required to install new hardware that supports and delivers the best price and performance. This process ensures high availability of virtual workloads. Hardware maximization can also be achieved by purchasing new quad core processors which have better hardware utilization capability along with less consumption of energy hence emissions of CO2 is greatly reduced. \\
+\subsubsection{a) Server Consolidation:}
+ Server consolidation is an approach to efficiently use Server resources in order to reduce the total number of servers or server locations to maximize the hardware utilization. This technique is used to overcome the problems of server sprawl, a situation in which multiple, under-utilized servers take up more space and consume more resources than can be justified by their workload. The process of server consolidation always begins from servers that are mostly underutilized and remain idle for long durations of time. The other most important reason for applying server consolidation is that these servers are in huge quantity while the available resources are very much limited. Servers in many companies typically run at 15-20 percent of their capacity, which may not be a sustainable ratio in the current economic environment. Businesses are increasingly turning to server consolidation as one means of cutting unnecessary costs and maximizing ROI in the data centers.
+ 
+\subsubsection{b) Physical to Virtual Live Migration:}
+ Physical to Virtual Live Migration is the most critical, time-consuming and painful operation when performed manually. Mostly data center managers find this process much more complex and rigorous. It includes cloning existing operating system and restoring it on an identical machine, but at the same time changing the whole underlying hardware, which can lead to driver reinstallation. To avoid these ambiguities, virtualization vendors started to offer different physical to virtual (P2V) migration utilities, by removing physical hardware dependencies from server operating systems and allowing them to be moved and recovered. Instead of having to perform scheduled hardware maintenance at some  hour over the weekend, server administrators can now live migrate a VM to another physical resource and perform physical server hardware maintenance in the middle of the business day. Virtuozzo for Windows 3.5.1 SWsoft itself introduced a physical to virtual (P2V) migration tool called VZP2V. This tool can remotely install P2V knowing machine administrative username and password.
+
+
+
+\subsection{Architecture}
+Data Center physical infrastructure is the foundation upon which Information Technology and telecommunication network resides. It is the backbone of businesses, and its elements provide the power, cooling, physical housing, security, fire protection and cablings which allow information technology to function. This physical infrastructure as whole helps to design, deploy and integrate a complete system that helps to achieve desirable objectives.     
+ \subsubsection{a) Move To 64-Bit Architecture:}
+  The architecture of a machine consists of set of different instructions that allow inspecting or modifying machine state trapped when executed in any or most probably the privileged mode. To support proper hardware utilization, it is important to update and revise whole DC architecture. To protect virtual workloads, x-64 systems should be linked to shared storage and arranged into some form of high availability clusters so as to minimize the single point of failure. One of the major issues in hardware maximization is the proper utilization and availability of RAM for each virtual machine. For this reason, it is important to consider 64 bit architecture, which provides more utilization and availability of RAM for all virtual and physical systems. 
+\subsubsection{b) Rely On Shared Storage:}
+ It is also important to consider single point of failure because one server is now running the workloads of multiple servers. If this server goes down the whole process of virtualization becomes fail. To remove the chances of single point of failure at any stage can be achieved by using redundancy and clustering services to protect virtual workloads. These services are mostly provided by Microsoft and Citrix. While VMware on the other hand uses custom configuration approach called High availability (HA).
+
+
+\subsection{Manage Virtualization}
+This is the most important step that involves end users and the top management to make the decision whether to implement the virtualization or not. It involves many factors like cost, ROI, security, and SLA. Virtualized data centers are managed by dividing the functionalities of data center into two layers; Resource Pool (RP), Virtual Service Offering (VSO).
+  It is very much important to consider the available resources and what other resources are required to fulfil the requirements of proper implementation of virtualization in data center.
+
+
+
+
+
+
+
+
+%----------------------------------------------------chapter 3 end -----------------------------------
+\chapter{ALGORITHMS }
+
+\section{VM placement algorithm} 
+\title{VM placement algorithm}
+\subparagraph*{Input:} data(job) , S ,Cm(Computing Node)
+\subparagraph*{Output:} calculates data transferring time
+\subparagraph*{Description:} This Algorithm first checks whether the required data has any replication in DC (lines 2-14) then it divides the datacentres into two types :\\
+ datacentres with replicas and \\
+datacentres without any replicas, (as shown in lines 5-14).\\
+It then sends this information to algorithm 2 as line 16 and algorithm 3 as line 17 to calculate the jobs completion time using the data-transferring time or using data replication. The functions CTimeDDT and CTimeReplication return the best computing node and the chosen datacentre for the VM. Then, the algorithm decides on the best CN by comparing the return values from both functions, allocating the required VM and its job to the chosen CN (as chosen in lines 18-25) and the replicated data if necessary. \\
+1: AllocatedHost $<-$ NULL \\
+2: Check if there any replica for required data \\
+3: Number of replica N = 0\\
+ 4: Number of datacentres haven’t any replicas uN = 0\\
+ 5: for Dc in DcList do \\
+6:\hspace{0.1 in}  for S in StorageList do\\
+ 7: \hspace{0.2 in}Check Datacentre has a replica R \\
+8:\hspace{0.2 in} if R 6= 0 then \\
+9:\hspace{0.3 in} N = N + 1 \\
+10: \hspace{0.2 in}else \\
+11:\hspace{0.3 in} uN = uN + 1 \\
+12:\hspace{0.2 in} end if \\
+13:\hspace{0.1 in} end for \\
+14: end for \\
+15: for vm in vmList do \\
+16:\hspace{0.1 in} CTimeDDT (vm(jobs),vm(Data),StorageList,R) \\
+17:\hspace{0.1 in} CTimeReplication(vm(jobs),vm(Data),StorageList,uR) \\
+18:\hspace{0.1 in} if AllocatedHost 6= NULL then \\
+19:\hspace{0.2 in} if CTimeDDT $<$ CTimeReplication then \\
+20: \hspace{0.3 in}Allocation.add(vm,ChosenCn) \\
+21: \hspace{0.3 in}AllocatedHost $<-$ True \\
+22: \hspace{0.2 in}else\\
+ 23:\hspace{0.3 in} Allocation.add(vm,ChosenCn) \\
+24: \hspace{0.3 in}replication.add(Data(vm),DC(ChosenDc,ChosenS)) \\
+25:\hspace{0.3 in} AllocatedHost $<-$ True\\
+ 26: \hspace{0.2 in}end if \\
+27: \hspace{0.1 in}end if \\
+28: end for\\
+
+\newpage
+\section{Calculates Completion Time using data transferring time CTimeDDT }
+\title{ Calculates Completion Time using data transferring time CTimeDDT }
+\subparagraph*{Input:} vm(jobs), vm(Data),StorageList, R
+\subparagraph*{Output:} calculates processing time and waiting time CT(Completion Time)
+\subparagraph*{Description:} This Algorithm calculates completion time using datatransferring time. First, it checks how many replicas there are for required data in every datacentre in line 5. Then it checks the CPU, bandwidth and memory capacity for every available CN, as shown in line 6. The process in lines 8-13 calculates the completion time for every job by adding the data-transferring time and computing time for every job and storing them in the variable JobComT. At the end of the loop, the variable JobComT has all jobs completion time for the ﬁrst CN. In lines 14-17, the algorithm checks which computing node (CN) has the minimal completion time and decides which DC and CN would be optimal for the VM. In line 23, if this condition is fulﬁlled with the required VM and it ﬁnds the CN that has minimal transferring time amongst all replicas, then the algorithm will send all information, including the chosen datacentre, the chosen CN, and the data-transferring time, to algorithm 1.\\
+DTT : Data Transferring Time\\
+1: MinComTime $<-$ MIN \\
+2: ChosenDc $<-$ NULL \\
+3: ChosenCn $<-$ NULL \\
+4: for Dc in DcList do \\
+5: \hspace{0.1 in}if N 6=0 then \\
+6: \hspace{0.2 in}for Cn in CnList do \\
+7: \hspace{0.3 in}if Load(vm) $<=$ Cap(Cn) then \\
+8: \hspace{0.4 in}for job in vm(jobs) do \\
+9: \hspace{0.4 in}DTT = data(job) / BW(S,Cn) \\
+10: \hspace{0.4 in}PCap = Inst(job)/(cap(Cn)*core(job)) \\
+11: \hspace{0.4 in}CT = St(job) + PCap \\
+12: \hspace{0.4 in}JobsComT = DTT + CT \\
+13: \hspace{0.3 in}end for \\
+14: \hspace{0.3 in}if JobsComT $<$ MinComTime then\\
+ 15:\hspace{0.4 in} MinComTime $<-$ JobsComT \\
+16: \hspace{0.4 in}ChosenCn =Cn \\
+17: \hspace{0.4 in}ChosenDc =Dc \\
+18: \hspace{0.3 in}end if \\
+19: \hspace{0.2 in}end if \\
+20: \hspace{0.1 in}end for\\
+ 21:\hspace{0.1 in} end if \\
+22: end for 
+23: return MinComTime,ChosenDc,ChosenCn
+
+
+\newpage
+\section{Calculates CompletionTime using data Replication CTimeReplication }
+\title{Calculates CompletionTime using data Replication CTimeReplication }
+\subparagraph*{Input:} vm(jobs), vm(Data),StorageList, uR(Replication Matrix)
+\subparagraph*{Output:} calculates processing time and waiting time CT
+\subparagraph*{Description:} This algorithm calculates the completion time with probability of using data replication. This algorithm checks how costly replication would be if the data are replicated to another datacentre that does not have any replica for the required data. First, it checks amongst datacentres that have no replicas for the required data and calculates the storage speed time for every datacentre and chooses the best one, as shown in lines 10-16. The process in lines 17-20 calculates the completion time for every job by adding the data-transferring time, which includes the replication time and computing time for every job and stores them in variable JobComT. At the end of the loop, the variable JobComT has all jobs completion times for the ﬁrst CN. In lines 22-26, the algorithm checks which computing node (CN) has the minimal completion time and decides which DC and CN would be optimal for the VM. The algorithm, using replication, sends all information, including the chosen datacentre, the chosen CN, the chosen S, and the best CN with minimal data-transferring time, to algorithm 1, as shown in line 31.\\
+RT : Replication Time\\
+1: MinComTime $<-$ MIN \\
+2: MinST $<-$ MIN \\
+3: ChosenDc $<-$ NULL\\
+4: ChosenCn $<-$ NULL \\
+5: for DC in DcList do \\
+6: \hspace{0.1 in}if R 6= True then \\
+7: \hspace{0.2 in}for Cn in CnList do \\
+8: \hspace{0.3 in}if Load(vm) $<=$ Cap(Cn) then \\
+9: \hspace{0.4 in}for job in JobList do \\
+10:\hspace{0.5 in} for S in StorageList do \\
+11:\hspace{0.5 in} ST = data(job)/ WD(S,DC) \\
+12:\hspace{0.6 in} if ST $<$ MinST then \\
+13:\hspace{0.7 in} MinST $<-$ ST \\
+14:\hspace{0.7 in} ChosenS = S \\
+15: \hspace{0.6 in}end if \\
+16: \hspace{0.5 in}end for \\
+17: \hspace{0.5 in}PCap = Inst(job)/(cap(Cn)×core(job)) \\
+18: \hspace{0.5 in}CT = St(job) + PCap \\
+19: \hspace{0.5 in}RT = data(job) / BW(ChosenS,Cn) \\
+20: \hspace{0.5 in}JobsComT = RT + CT \\
+21: \hspace{0.4 in}end for \\
+22: \hspace{0.5 in}if JobsComT $<$ MinComTime then \\
+23: \hspace{0.5 in}MinComTime $<-$ JobsComT \\
+24: \hspace{0.5 in}ChosenCn =Cn \\
+25: \hspace{0.5 in}ChosenDc =Dc \\
+26: \hspace{0.4 in}end if \\
+27:\hspace{0.3 in} end if \\
+28:\hspace{0.2 in} end for \\
+29:\hspace{0.1 in} end if \\
+30: end for \\
+31: return MinComTime,ChosenDc,ChosenCn,ChosenS\\
+
+
+
+
+
+%----------------------------------------------------chapter 4 end -----------------------------------
+\chapter{ANALYTIC STUDY}
+
+\section{Results}
+1. It gives details about Data Centers, their architecture and design models.
+Along with the knowledge of DCs, one of the technique used in DCs is mentioned and explained. With the use of Virtualization technique in DCs we can make our DC green, i.e. Energy and Cost efficient. \\
+2. It is also important for the DC to check whether it has the necessary infrastructure to handle the increased power and cooling densities arise due to the implementation of virtualization. \\
+3. It is important to determine the type of servers, their current status whether idle or busy, how much it will cost to implement server virtualization, the type of technology needed to achieve the service levels required and finally meet the security/privacy objectives. The harmful gases emission from DCs in reduced, complexity level of DC infrastructure and their equipments management is get reduced.
+
+
+
+
+
+
+
+
+%----------------------------------------------------chapter 5 end ----------------------------------
+\chapter{CONCLUSIONS }
+This seminar highlights the basic idea of data center with their design and architectural standards and  importance of virtualization technology being implemented in DCs to save the cost and maximize the efficiency of different resources available.
+Details about virtualization, its benefits and a five-step model to properly implement virtualization in DCs. 
+
+%----------------------------------------------------chapters end --------------------------------------
+
+
+
+
+
+
+
+
+%----------------------------------------------------Bibliography---------------------------------------
+
+
+
+\newpage
+\bibliography{Bibliography}
+\begin{thebibliography}{li}
+\addcontentsline{toc}{chapter}{\quad\,\,{\bibname}}
+\label{chap:references}
+
+\bibitem{first}
+Mueen Uddin, Azizah Abdul Rahman
+{\em Virtualization Implementation Model for Cost Effective and Efficient Data Centers},Vol. 2, No.1, January 2016,PP:69-74.
+
+\bibitem{second}
+Yasser Alharbi and Stuart Walker, School of Computer Science and Electronic Engineering, University of Essex Colchester, UK 
+{\em  Data Intensive, Computing and Network Aware (DCN) Cloud VMs Scheduling Algorithm}, FTC 2016 - IEEE Future Technologies Conference 2016 6-7 December 2016, PP:1261-1262.
+
+\bibitem{third}
+Cisco press, Mauricio Arregoces,CCIE no.3285 and Maurizio Portolani
+{\em Data Center Fundamentals,”},
+Published by Cisco Press 2004, pp. 61-10,31-36 .
+
+\bibitem{fourth}
+Md. Jahangir Hossain, Open Communication Limited,
+{\em “Data Center Design and Virtualization,”},
+MyNOG 2016, pp.2-18, 25-31.
+
+\bibitem{fifth}
+Hazril Izan Bahari , Siti Salbiah Mohamed Shariff
+{\em “Review on Data Center Issues and Challenges: Towards the Green Data Center,”}
+2016 6th IEEE International Conference on Control System, Computing and Engineering, 25–27 November 2016, Penang, Malaysia,978-1-5090-1178-0/16 , PP:129-132.
+
+ 
+\end{thebibliography}
+
+
+%--------------------------------------------- End Bibliography---------------------------------------
+
+
+
+
+\end{document}
